@@ -26,10 +26,10 @@ namespace PaymentGateway.Controllers
         public IBankResponse Get(Guid guid) => _paymentCollection.GetByGUID(guid);
 
         [HttpPost]
-        public IBankResponse Post([FromBody] IPaymentRequest paymentRequest)
+        public IBankResponse Post([FromBody]Payment paymentRequest)
         {
             IBankResponse response = null;
-            if (Regex.IsMatch(paymentRequest.CardNumber, "^[0-9]{16,16}$") && Regex.IsMatch(paymentRequest.CardCVV, "^[0-9]{3,3}$"))
+            if (paymentRequest != null && Regex.IsMatch(paymentRequest.CardNumber, "^[0-9]{16,16}$") && Regex.IsMatch(paymentRequest.CardCVV, "^[0-9]{3,3}$"))
             {
                 response = _paymentCollection.Create(new Payment
                 {
@@ -47,6 +47,6 @@ namespace PaymentGateway.Controllers
         }
 
         [HttpDelete("{id}")]
-        public void Delete(int id) => _paymentCollection.Delete(id);
+        public IBankResponse Delete(int id) => _paymentCollection.Delete(id);
     }
 }

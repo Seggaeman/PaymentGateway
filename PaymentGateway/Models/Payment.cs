@@ -10,8 +10,7 @@ namespace PaymentGateway.Models
     public class Payment : IPaymentRequest, IBankResponse
     {
         public long Id { get; set; }
-        [JsonIgnore]
-        public string CardNumber { get; set; }
+        public string CardNumber { internal get; set; }
         public string CardCVV { get; set; }
         public DateTime CardExpiryDate { get; set; }
         public StatusCode Result { get; set; }

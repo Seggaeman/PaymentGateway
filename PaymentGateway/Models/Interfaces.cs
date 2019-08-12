@@ -15,7 +15,7 @@ namespace PaymentGateway.Models
     public interface IPaymentRequest
     {
         long Id { get; set; }
-        string CardNumber { get; set; }
+        string CardNumber { set; }
         string CardCVV { get; set; }
         DateTime CardExpiryDate { get; set; }
         string Description { get; }
@@ -26,7 +26,7 @@ namespace PaymentGateway.Models
     public interface IBankResponse
     {
         long Id { get; set; }
-        string CardNumber { get; set; }
+        string CardNumber { set; }
         string CardCVV { get; set; }
         DateTime CardExpiryDate { get; set; }
         StatusCode Result { get; set; }
@@ -63,7 +63,7 @@ namespace PaymentGateway.Models
         IBankResponse GetByGUID(Guid guid);
         IEnumerable<IBankResponse> GetAll();
         IBankResponse Create(IPaymentRequest paymentRequest);
-        void Delete(long id);
+        IBankResponse Delete(long id);
     }
 
     public interface IBank

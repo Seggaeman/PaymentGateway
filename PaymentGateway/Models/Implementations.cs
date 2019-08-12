@@ -22,10 +22,15 @@ namespace PaymentGateway.Models
             return obj.Entity;
         }
 
-        public void Delete(long id)
+        public IBankResponse Delete(long id)
         {
-            _context.Remove(Get(id));
-            _context.SaveChanges();
+            IBankResponse bankResponse = Get(id);
+            if (bankResponse != null)
+            {
+                _context.Remove(bankResponse);
+                _context.SaveChanges();
+            }
+            return bankResponse;
         }
 
         public IBankResponse Get(long id)

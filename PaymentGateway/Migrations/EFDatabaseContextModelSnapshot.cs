@@ -34,6 +34,8 @@ namespace PaymentGateway.Migrations
 
                     b.Property<string>("Currency");
 
+                    b.Property<string>("Description");
+
                     b.Property<string>("MaskedCardNumber");
 
                     b.Property<DateTime>("PaymentDate");

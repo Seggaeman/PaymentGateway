@@ -19,6 +19,7 @@ namespace PaymentGateway.Migrations
                     CardExpiryDate = table.Column<DateTime>(nullable: false),
                     CardNumber = table.Column<string>(nullable: true),
                     Currency = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
                     MaskedCardNumber = table.Column<string>(nullable: true),
                     PaymentDate = table.Column<DateTime>(nullable: false),
                     Result = table.Column<int>(nullable: false),

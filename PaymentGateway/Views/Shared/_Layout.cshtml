@@ -3,8 +3,14 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Payement Gateway</title>
+    <title>Payment Gateway</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script type="text/javascript" src="~/lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("input.input-validation-error").addClass("border-danger");
+        });
+    </script>
 </head>
 <body>
     <div>

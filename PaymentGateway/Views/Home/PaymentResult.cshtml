@@ -1,0 +1,14 @@
+﻿@model Payment
+@if (Model.Result == StatusCode.OK)
+{
+    <h3 class="p-2 bg-success text-white text-center">Confirmation</h3>
+    <div class="text-center">Payment succeeded with status code @Model.Result</div>
+}
+else
+{
+    <h3 class="p-2 bg-danger text-white text-center">Confirmation</h3>
+    <div class="text-center">Payment failed with status code @Model.Result</div>
+}
+<div class="text-center">
+    <a asp-action="Index" class="btn btn-primary">Return</a>
+</div>

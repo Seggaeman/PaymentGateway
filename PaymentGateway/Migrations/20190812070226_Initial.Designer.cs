@@ -11,7 +11,7 @@ using System;
 namespace PaymentGateway.Migrations
 {
     [DbContext(typeof(EFDatabaseContext))]
-    [Migration("20190811215654_Initial")]
+    [Migration("20190812070226_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,6 +34,8 @@ namespace PaymentGateway.Migrations
                     b.Property<string>("CardNumber");
 
                     b.Property<string>("Currency");
+
+                    b.Property<string>("Description");
 
                     b.Property<string>("MaskedCardNumber");
 

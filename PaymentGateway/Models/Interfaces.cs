@@ -7,7 +7,7 @@ namespace PaymentGateway.Models
 {
     public enum StatusCode
     {
-        UNKNOWN,
+        NOENTRY,
         OK,
         FAILED
     }
@@ -18,6 +18,7 @@ namespace PaymentGateway.Models
         string CardNumber { get; set; }
         string CardCVV { get; set; }
         DateTime CardExpiryDate { get; set; }
+        string Description { get; }
         double Amount { get; }
         string Currency { get; }
     }
@@ -32,6 +33,7 @@ namespace PaymentGateway.Models
         DateTime PaymentDate { get; }
         Guid TransactionId { get; }
         string MaskedCardNumber { get; }
+        string Description { get; }
         double Amount { get; }
         string Currency { get; }
     }
